@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Tags</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="tags-content">
+    <ion-list>
+      <ion-item>
+        <ion-label>Tap to select tags</ion-label>
+        <ion-select [(ngModel)]="selectedTags" (ionChange)="updateSelected($event)" multiple="true" cancelText="Cancel" okText="Go" [selectOptions]="selectOptions">
+          <ion-option *ngFor="let tag of tags" value="{{tag}}">{{tag}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+  <ion-list>
+    <ion-item *ngFor="let track of tracks" (tap)="itemTapped($event, track)" [class.playing]="track.playing" >
+      <ion-thumbnail item-left>
+        <img src="assets/img/{{track.image}}">
+        <ion-icon *ngIf="!track.playing" name="play"></ion-icon>
+        <ion-icon *ngIf="track.playing" name="pause"></ion-icon>
+      </ion-thumbnail>
+      <h2>{{track.name}}</h2>
+      <p>
+        <ion-badge *ngFor="let tag of track.tags" item-right><ng-container *ngIf="selectedTags.indexOf(tag) !== -1">{{tag}}</ng-container></ion-badge>
+      </p>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar *ngIf="playing" id="mini-player">
+    <ion-title>Now Playing: {{playingTrack ? nowPlaying : ''}}</ion-title>
+    <button id="btnPlay" ion-button icon-only (tap)="miniPlayerPause($event)">
+      <ion-icon [name]="playingTrack && playingTrack.playing ? 'pause' : 'play'"></ion-icon>
+    </button>
+    <button ion-button icon-left [color]="timerActive ? 'danger' : 'primary'" (tap)="openTimerControls($event)">
+      <ion-icon name="timer"></ion-icon> Timer
+    </button>
+    <button ion-button icon-left end [color]="playingTrack && playingTrack.fav ? 'danger' : 'primary'" (tap)="addFavorite($event)">
+      <ion-icon [name]="playingTrack && playingTrack.fav ? 'heart' : 'add-circle'"></ion-icon> Favorite
+    </button>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,68 @@
+page-categories {
+    .card-background-page {
+
+        ion-item {
+            text-align: center;
+            box-sizing: border-box;
+            height: 50vh;
+
+            @media( orientation:landscape ){
+                height: 50vh;
+                margin-bottom: 20px;
+            }
+
+            @media( min-height: 1024px ){
+                height: 71vh;
+            }
+        }
+
+        ion-label{
+            
+        }
+
+        .card-wrap{
+            position: relative;
+        }
+
+        .card-copy{
+            position: absolute;
+            top: 28%;
+            width: 100%;
+            @media( orientation:landscape ){
+
+                top: 42%;
+            }
+            @media( min-height: 1024px ){
+
+                top: 36%;
+            }
+        }
+
+        .card-title {
+            
+            font-size: 9vh;
+            width: 100%;
+            font-weight: bold;
+            color: #fff;
+
+            @media( orientation:landscape ){
+                font-size: 12vh;
+            }
+        }
+
+        .card-subtitle {
+            font-size: 4.8vh;
+            width: 100%;
+            color: #fff;
+
+            @media( orientation:landscape ){
+                font-size: 6.8vh;
+            }
+        }
+
+    }
+
+    ion-footer .toolbar-title{
+        font-size: 1.5rem;
+    }
+}

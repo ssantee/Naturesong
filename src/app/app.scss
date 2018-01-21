@@ -1,4 +1,4 @@
-// http://ionicframework.com/docs/theming/
+// http://ionicframework.com/docs/v2/theming/
 
 
 // App Global Sass
@@ -14,3 +14,115 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+.statusbar{
+    color: color($colors, statusBar);
+}
+
+.tabs .tabbar{
+    background-color: color($colors, bgTools);
+    
+    .tab-button{
+        color: color($colors, toolsColor);
+        font-size: 12px;
+    }
+}
+.tabs-md .tab-button-icon{
+    color: color($colors, toolsColor);
+}
+.content, .item{
+    background-color: color($colors,bgPrimary);
+    color: color($colors, light);
+}
+
+.toolbar-background{
+    background-color: color($colors, bgTools);
+}
+
+.toolbar-title{
+    color: color($colors, light);
+}
+
+.item.item-block{
+    .item-inner{
+        border-bottom: none;
+    }
+}
+
+.item{
+    p{
+        color: color($colors, text);
+    }
+
+    border-bottom: 1px solid #0d0d0d;
+}
+
+.back-button, .bar-button-default:hover:not(.disable-hover){
+    color: color($colors, light);
+}
+
+#mini-player{ 
+
+    ion-title{
+        position: static;
+        padding: 1px 0; 
+    }
+
+    .toolbar-content{
+        text-align: center;
+    }
+
+    #btnPlay{
+        width: 4em;
+    }
+}
+
+.list > .item-block:last-child, .list > .item-wrapper:last-child .item-block{
+    border-bottom: none;
+}
+
+//styles for pages that list tracks
+//find font-color of play control, play/pause
+//control alignments here
+page-tags, page-track-list{
+    font-size: 16px;
+    ion-thumbnail{
+        position: relative;
+        img{
+            filter:brightness(0.7);
+        }
+    }
+
+    ion-thumbnail > ion-icon{
+        color: rgba( 223, 223, 223, .88 );
+        font-size: 6rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -30px 0 0 -18px;
+    }
+
+    .item-ios ion-thumbnail > ion-icon{
+        margin: -30px 0 0 -14px;
+    }
+
+    .item .label{
+
+        margin: 6px 8px 6px 0;
+        white-space: normal;
+    }
+}
+
+.select-alert .alert-wrapper{
+
+    background-color: color($colors, bgTools);
+    color: color($colors, toolsColor);
+
+    .alert-checkbox-label{
+        color: color($colors, toolsColor);
+    }
+}
+
+ion-footer .toolbar-title{
+    font-size: 1.5rem;
+}

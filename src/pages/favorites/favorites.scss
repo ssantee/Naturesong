@@ -1,0 +1,27 @@
+page-favorites {
+
+    font-size: 16px;
+    ion-thumbnail{
+        position: relative;
+    }
+
+    ion-thumbnail > ion-icon{
+        color: rgba( 223, 223, 223, .85 );
+        font-size: 6rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -30px 0 0 -18px;
+    }
+
+    .item-ios ion-thumbnail > ion-icon{
+        margin: -30px 0 0 -14px;
+    }
+
+    .item .label{
+
+        margin: 6px 8px 6px 0;
+        white-space: normal;
+    }
+
+}
