@@ -3,8 +3,7 @@ import { Platform } from 'ionic-angular';
 import { Media, MediaObject } from '@ionic-native/media';
 
 export class MediaPlayer{
-    media;
-    mediaObject;
+    
     platForm;
     isDesktop;
     isAndroid;
@@ -39,6 +38,7 @@ export class MediaPlayer{
     //how often do we check that play should time out 
     playForDurationIncrement = 10000;//ms
 
+    mediaObj;
     file: MediaObject;
     file2: MediaObject;
     filePlaying;
@@ -58,46 +58,24 @@ export class MediaPlayer{
         //at some point, refactor try/catch in audio
         //methods to use this bool 
         this.isDesktop = this.platForm.is( 'core' );
-        
+        this.mediaObj = new Media();
     }
 
     setupFile( path ){
 
-        //const file: MediaObject = this.media.create('file.mp3');
-
-        this.file = this.media.create(path);
+        this.file = this.mediaObj.create(path);
 
         this.file.onStatusUpdate.subscribe(status => console.log(status));
 
-        /*this.file = new MediaPlugin( path, (status)=>{
-            
-            console.log( 'File Media Status: ' + status);  
-        });*/
-
-        this.file2 = this.media.create(path);
+        this.file2 = this.mediaObj.create(path);
 
         this.file2.onStatusUpdate.subscribe(status => console.log(status));
 
-        /*this.file2 = new MediaPlugin( path, (status)=>{
-            
-            console.log( 'File 2 Media Status: ' + status);
-        });*/
-
         try{
-            /*this.file.init.then( ()=>{},(err)=>{
 
-                console.log('File1 Err callback error code: ' + err.code + ' message: ' + err.message);
-
-                console.log(err);
-            } );
-            this.file2.init.then( ()=>{},(err)=>{
-
-                console.log('File2 Err callback error code: ' + err.code + ' message: ' + err.message);
-
-                console.log(err);
-            } );*/
             this.file.onError.subscribe(error => console.log('Error!', error));
             this.file2.onError.subscribe(error => console.log('Error!', error));
+            
         }
         catch(err){}
     }

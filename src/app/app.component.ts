@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Platform, MenuController, Nav } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { Media, MediaObject } from '@ionic-native/media';
 
 import { CategoriesPage } from '../pages/categories/categories';
 import { TrackListPage } from '../pages/track-list/track-list';
@@ -20,7 +21,7 @@ import { TimerControlsService } from './timercontrols.service';
 
 @Component({
   templateUrl: 'app.html',
-  providers: [ Track, TracksService, PlayerService, CategoriesService, FavoritesService, StorageService, TimerControlsService, StatusBar, SplashScreen ]
+  providers: [ Track, TracksService, PlayerService, CategoriesService, FavoritesService, StorageService, TimerControlsService, StatusBar, SplashScreen, Media ]
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
