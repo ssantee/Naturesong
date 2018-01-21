@@ -37,6 +37,8 @@ export class FavoritesPage {
 
         this.selectedItem = navParams.get('item');
 
+        this.timerActive = this.playerService.getPlayer().timerIsActive;
+
         this.playerService.getPlayer().timerStarted.subscribe( ()=>{
             
             this.timerActive = true;

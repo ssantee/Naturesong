@@ -39,6 +39,8 @@ export class TrackListPage {
 
         this.loadedId = '';
 
+        this.timerActive = this.playerService.getPlayer().timerIsActive;
+
         this.playerService.getPlayer().timerStarted.subscribe( ()=>{
             
             this.timerActive = true;

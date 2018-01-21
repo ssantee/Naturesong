@@ -31,10 +31,13 @@ export class TagsPage {
 
         this.totalTracks = this.tracksService.getNumberOfTracks();
 
+        this.timerActive = this.playerService.getPlayer().timerIsActive;
+
         this.playerService.getPlayer().timerStarted.subscribe( ()=>{
             
             this.timerActive = true;
         }, ()=>{}, ()=>{} );
+
         this.playerService.getPlayer().timerStopped.subscribe( ()=>{
             
             this.timerActive = false;
