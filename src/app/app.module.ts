@@ -11,7 +11,7 @@ import { TrackListPage } from '../pages/track-list/track-list';
 import { FavoritesPage } from '../pages/favorites/favorites';
 import { TagsPage } from '../pages/tags/tags';
 
-import { TranslatePipe } from './translate.pipe.ts';
+import { TranslatePipe } from './translate.pipe';
 
 @NgModule({
   declarations: [
