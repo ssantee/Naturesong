@@ -39,5 +39,9 @@ export const Tracks: Track[] = [
     //duration manually shortened for blend
     {id: '19', name: 'Swamp Talk', image: 'justin-cron-57978-small.jpg', fileName: 'Frogs.mp3', category: 'Nature', description: '', tags: ['wildlife', 'insects'], duration: 70},
 
-    {id: '20', name: 'Windchimes', image: 'windchimes.jpg', fileName: 'wind_chime_on_lanai.mp3', category: 'Indoor', description: '', tags: ['wind'], duration: 120}
+    {id: '20', name: 'Windchimes', image: 'windchimes.jpg', fileName: 'wind_chime_on_lanai.mp3', category: 'Indoor', description: '', tags: ['wind'], duration: 120},
+
+    {id: '21', name: 'Air Conditioner', image: 'ac.jpg', fileName: 'AC_unit.mp3', category: 'Urban', description: '', tags: ['mechanical'], duration: 119},
+
+    {id: '22', name: 'Bee Hives', image: 'bee.jpg', fileName: 'Backyard_Bees.mp3', category: 'Nature', description: '', tags: ['insects', 'wildlife'], duration: 119}
 ];
