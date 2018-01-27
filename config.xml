@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.blupixelstudio.naturesong" version="2.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.blupixelstudio.naturesong" version="2.0.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Naturesong: Authentic sound ambience to aid sleep and concentration</name>
     <description>Authentic sound ambience to aid sleep and concentration.</description>
     <author email="steve@blupixelstudio.com" href="http://blupixelstudio.com/">bluPixel Studio</author>
@@ -43,6 +43,11 @@
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
+        <icon height="48" src="resources/ios/icon/AppIcon24x24@2x.png" width="48" />
+        <icon height="55" src="resources/ios/icon/AppIcon27.5x27.5@2x.png" width="55" />
+        <icon height="88" src="resources/ios/icon/AppIcon44x44@2x.png" width="88" />
+        <icon height="172" src="resources/ios/icon/AppIcon86x86@2x.png" width="172" />
+        <icon height="196" src="resources/ios/icon/AppIcon98x98@2x.png" width="196" />
         <icon height="57" src="resources/ios/icon/icon.png" width="57" />
         <icon height="114" src="resources/ios/icon/icon@2x.png" width="114" />
         <icon height="40" src="resources/ios/icon/icon-40.png" width="40" />
@@ -62,6 +67,12 @@
         <icon height="58" src="resources/ios/icon/icon-small@2x.png" width="58" />
         <icon height="87" src="resources/ios/icon/icon-small@3x.png" width="87" />
         <icon height="1024" src="resources/ios/icon/icon-1024.png" width="1024" />
+        <splash height="1125" src="resources/ios/splash/Default-2436h-Landscape.png" width="2436" />
+        <splash height="2436" src="resources/ios/splash/Default-2436h.png" width="1125" />
+        <splash height="748" src="resources/ios/splash/Wsb-Landscape~ipad.png" width="1024" />
+        <splash height="1496" src="resources/ios/splash/Wsb-Landscape@2x~ipad.png" width="2048" />
+        <splash height="1004" src="resources/ios/splash/Wsb-Portrait~ipad.png" width="768" />
+        <splash height="2008" src="resources/ios/splash/Wsb-Portrait@2x~ipad.png" width="1536" />
         <splash height="1136" src="resources/ios/splash/Default-568h@2x~iphone.png" width="640" />
         <splash height="1334" src="resources/ios/splash/Default-667h.png" width="750" />
         <splash height="2208" src="resources/ios/splash/Default-736h.png" width="1242" />
