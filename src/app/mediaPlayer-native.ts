@@ -80,8 +80,6 @@ export class MediaPlayer{
             
             this.nativeAudio.preloadComplex( 'track1', path, 1, 1, 0 ).then( ()=>{ 
             
-                
-
                 this.play( track ).then( ()=>{
 
                     resolve();
