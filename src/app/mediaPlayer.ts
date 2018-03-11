@@ -73,8 +73,21 @@ export class MediaPlayer{
 
         try{
 
-            this.file.onError.subscribe(error => console.log('Error!', error));
-            this.file2.onError.subscribe(error => console.log('Error!', error));
+            this.file.onError.subscribe(error => {
+                
+                console.dir('Error!');
+                console.dir(error);
+                
+                
+            
+            });
+            this.file2.onError.subscribe(error => {
+                
+                console.dir('Error!');
+                console.dir(error);
+                
+            
+            });
             
         }
         catch(err){}
@@ -240,7 +253,8 @@ export class MediaPlayer{
         try{
             
             this.file.setVolume( this.initVolume );
-            this.file.play();
+            this.file.play( { playAudioWhenScreenIsLocked : true } );
+            
 
             this.playStartedAt = Date.now();
 
@@ -258,7 +272,7 @@ export class MediaPlayer{
 
                     this.file2.setVolume( this.initVolume );
 
-                    this.file2.play();
+                    this.file2.play( { playAudioWhenScreenIsLocked : true } );
 
                     //this.fadeIn( this.file2 );
 
@@ -275,7 +289,7 @@ export class MediaPlayer{
 
                     this.file.setVolume( this.initVolume );
 
-                    this.file.play();
+                    this.file.play( { playAudioWhenScreenIsLocked : true } );
 
                     //this.fadeIn( this.file );
 
