@@ -1,4 +1,4 @@
-import { Track } from './track';
+/*import { Track } from './track';
 
 import { NativeAudio } from '@ionic-native/native-audio';
 
@@ -97,3 +97,4 @@ export class Player{
         this.setPlayState(false);
     }
 }
+*/
