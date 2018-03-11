@@ -85,8 +85,11 @@ export class CategoriesPage {
         //this looks odd but the play method does the heavy lifting
         //on figuring what's playing and what should happen
         //when this control is clicked
-        this.playerService.play();
-        this.pausePlay = this.playerService.isPlaying() ? 'pause' : 'play';
+
+        this.playingTrack = this.playerService.getNowPlayingTrack();
+
+        this.itemTapped( {}, this.playingTrack );
+        
     }
 
     openTimerControls( $event ){

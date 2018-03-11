@@ -5,13 +5,12 @@ import { IonicStorageModule } from '@ionic/storage';
 import { MyApp } from './app.component';
 import { TabsPage } from '../pages/tabs/tabs';
 import { AboutPage } from '../pages/about/about';
-
 import { CategoriesPage } from '../pages/categories/categories';
 import { TrackListPage } from '../pages/track-list/track-list';
 import { FavoritesPage } from '../pages/favorites/favorites';
 import { TagsPage } from '../pages/tags/tags';
-
 import { TranslatePipe } from './translate.pipe';
+import { BackgroundMode } from '@ionic-native/background-mode';
 
 @NgModule({
   declarations: [
@@ -42,7 +41,7 @@ import { TranslatePipe } from './translate.pipe';
     FavoritesPage,
     TagsPage
   ],
-  providers: [IonicStorageModule, {provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [BackgroundMode,IonicStorageModule, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
 export class AppModule {
 

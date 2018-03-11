@@ -3,7 +3,7 @@ import { Platform, MenuController, Nav } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { Media, MediaObject } from '@ionic-native/media';
-
+import { NativeAudio } from '@ionic-native/native-audio';
 import { CategoriesPage } from '../pages/categories/categories';
 import { TrackListPage } from '../pages/track-list/track-list';
 import { AboutPage } from '../pages/about/about';
@@ -18,10 +18,12 @@ import { CategoriesService } from './categories.service';
 import { FavoritesService } from './favorites.service';
 import { StorageService } from './storage.service';
 import { TimerControlsService } from './timercontrols.service';
+import { MediaPlayer } from './mediaPlayer-native';
+import { BackgroundMode } from '@ionic-native/background-mode';
 
 @Component({
   templateUrl: 'app.html',
-  providers: [ Track, TracksService, PlayerService, CategoriesService, FavoritesService, StorageService, TimerControlsService, StatusBar, SplashScreen, Media ]
+  providers: [ Track, TracksService, PlayerService, CategoriesService, FavoritesService, StorageService, TimerControlsService, StatusBar, SplashScreen, Media, NativeAudio, MediaPlayer,BackgroundMode ]
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
@@ -36,7 +38,8 @@ export class MyApp {
     public menu: MenuController,
     public playerService: PlayerService,
     public statusBar: StatusBar,
-    public splash: SplashScreen
+    public splash: SplashScreen,
+    private backgroundMode: BackgroundMode
   ) {
 
     this.initializeApp();
@@ -55,6 +58,7 @@ export class MyApp {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
+      this.backgroundMode.enable();
       this.statusBar.styleBlackTranslucent();
       this.splash.hide();
     });

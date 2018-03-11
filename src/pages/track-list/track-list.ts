@@ -61,17 +61,23 @@ export class TrackListPage {
 
         var track: Track = this.tracksService.getTrackById(item.id);
         
-        this.playerService.play( track );
+        this.playerService.play( track ).then( ()=>{;
 
-        this.ionViewWillEnter();
+            this.ionViewWillEnter();
+
+        }, ()=>{} );
     }
 
     ionViewWillEnter(){
-        
+
         this.playingTrack = this.playerService.getNowPlayingTrack();
+
         this.playing = this.playerService.isPlaying() || this.playerService.isPaused();
+
         this.nowPlaying = this.playerService.getNowPlayingTitle();
+
         this.pausePlay = this.playerService.isPlaying() ? 'pause' : 'play';
+
         this.content.resize();
     }
 
@@ -90,8 +96,11 @@ export class TrackListPage {
         //this looks odd but the play method does the heavy lifting
         //on figuring what's playing and what should happen
         //when this control is clicked
-        this.playerService.play();
-        this.pausePlay = this.playerService.isPlaying() ? 'pause' : 'play';
+
+        this.playingTrack = this.playerService.getNowPlayingTrack();
+
+        this.itemTapped( {}, this.playingTrack );
+        
     }
 
     openTimerControls( $event ){
