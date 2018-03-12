@@ -156,12 +156,32 @@ export class MediaPlayer{
                 this.fading = false;
 
                 console.log( 'fadeout complete' );
+
+                if( stop ){
+
+                    this.stop();
+
+                    this.stopNotification.emit();
+
+                    this.timerIsActive = false;
+
+                    this.timerStopped.emit();
+
+                    this.isPlaying = false; 
+
+                    this.isPaused = false;    
+
+                    this.isStopped = true;
+                }
             }
             else{
 
                 this.volumeTracker2 = this.volumeTracker2 - this.fadeVolumeIncrement;
 
-                this.nativeAudio.setVolumeForComplexAsset( file , this.volumeTracker2 ).then( ()=>{}, ()=>{} );
+                this.nativeAudio.setVolumeForComplexAsset( file , this.volumeTracker2 ).then( ()=>{
+
+
+                }, ()=>{} );
 
                 console.log( 'FadeOut set volume to: ' + parseFloat(this.volumeTracker2.toPrecision(2)) );
             }
@@ -211,17 +231,6 @@ export class MediaPlayer{
                 
                 this.filePlaying === 1 ? this.fadeOut( 'track1', true ) : this.fadeOut( 'track2', true );
                 
-                this.stopNotification.emit();
-
-                this.timerIsActive = false;
-
-                this.timerStopped.emit();
-
-                this.isPlaying = false; 
-
-                this.isPaused = false;    
-
-                this.isStopped = true;
             }
         }, this.playForDurationIncrement );
     }
